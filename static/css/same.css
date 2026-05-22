@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main_class_site{
+    overflow-X: hidden;
+}
+.d-flex{
+    display: flex !important;
+}
+.f-w{
+    flex-wrap: wrap !important;
+}
+.w-1{
+    width: 10%;
+}
+.w-2{
+    width: 20%;
+}
+.w-3{
+    width: 30%;
+}
+.w-4{
+    width: 40%;
+}
+.w-5{
+    width: 50%;
+}
+.w-6{
+    width: 60%;
+}
+.w-7{
+    width: 70%;
+}
+.w-8{
+    width: 80%;
+}
+.w-9{
+    width: 90%;
+}
+.w-10{
+    width: 100%;
+}
+.js-content-center{
+    justify-content: center;
+}
+.ai-center{
+    align-items: center;
+}
+.tx-center{
+    text-align: center;
+}
+.pd-top{
+    padding-top: 70px;
+}
+.a-dction{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}

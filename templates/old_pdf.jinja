@@ -1,0 +1,37 @@
+{% extends 'doctype.html' %}
+
+{% block title %}
+Old PDFs
+{% endblock title %}
+{% block body %}
+<div class="main_title_box tx-center">
+    <h1>All Sorted PDFs</h1>
+</div>
+<div class="main_pdf_section d-flex js-content-center ai-center f-w w-10 pd-top tx-center">
+
+    {% for file in files %}  
+                <div class="download_box w-3 pd-top">
+                    <div class="pdf_icon_output">
+                        <img src="{{ url_for('static', filename='image/icon.jpg') }}" alt="">
+                    </div>
+                    <div class="filename_class">
+                        <p>{{ file }}</p>
+
+                    </div>
+                    
+                    <div class="download_btn_class">
+                        <a href="{{ url_for('static', filename='sorted_pdf/' + file) }}" download>
+                            <button type="button" class="same_class_btn">
+                                Download
+                            </button>
+
+                        </a>
+                    </div>
+                </div>
+
+    {% endfor %}
+
+</div>
+
+</div>
+{% endblock body %}

@@ -1,0 +1,31 @@
+{% block css %}
+<style>
+
+    .main_header_class{
+        border:1px solid #D4AF37; 
+    }
+    a {text-decoration: none;color: black;font-size: 15px;}
+
+ul.ul_same_class.d-flex {
+    list-style: none;
+}
+</style>
+
+{% endblock css %}
+
+{% block body %}
+<div class='main_class_site'>
+<div class="main_header_class w-10">
+    <div class="inner_header_class d-flex js-content-center ai-center f-w w-10">
+        <div class="header_logo_class w-4">
+            <img src="{{url_for('static', filename='image/logo1.png')}}" class="w-3" alt="">
+        </div>
+        <div class="header_link_class w-6">
+            <ul class="ul_same_class d-flex">
+                <li class="li_same_class w-5"><a href="/">home</a></li>
+                <li class="li_same_class w-5"><a href="/old_pdf">old pdf</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock body %}

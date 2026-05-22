@@ -1,0 +1,90 @@
+{% extends 'doctype.html' %}
+{% block title %} upload {% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/upload.css')}}">
+{% endblock css %}
+
+{% block body %}
+
+<form action="" method="POST" enctype="multipart/form-data">
+    <div class="maia_class tx-center pd-top">
+        <div class="inner_class">
+            <div class="upload_int_main__class">
+                <div class="upload_int_inner_class">
+                    <label for="input_file" class="label_class">
+                        <div class="int_imag_class ">
+                            <div class="int_image_inner_class d-flex ai-center js-content-center">
+                                <img src="{{url_for('static',filename='image/logo1.png')}}" class="w-2 image_class"
+                                    id="logo_img" alt="">
+                                <input type="file" name="pdf" id="input_file" accept=".pdf,.xls,.xlsx" id="input_file"
+                                    hidden>
+                            </div>
+                            <p>Upload Pdf Here</p>
+                            <div class="icon_buffering_class d-flex js-content-center ai-center">
+                                <img src="{{url_for('static',filename='image/loading.png')}}" class="w-2 image_class"
+                                    id="loading_img" alt="">
+                            </div>
+                            <div class="pdf_success_class  d-flex js-content-center ai-center">
+                                <img src="{{url_for('static',filename='image/icon.jpg')}}"
+                                    class="w-2 image_class pdf_vision" id="pdf_img" alt="">
+                            </div>
+                        </div>
+                        <div class="w-10">
+                            <div id="msg_succ"></div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="btn_main_class">
+                <div class="btn_inner_class d-flex ai-center js-content-center">
+                    <div class="f_btn_sub_class same_up_claa">
+                        <button type="submit" class="btn_class_s same_class_btn">upload PDF</button>
+                    </div>
+
+                    <div class="s_btn_sub_class same_up_claa">
+                        <button type="reset" id="btn_reset" class="same_class_btn">Reset</button>
+                    </div>
+                </div>
+            </div>
+            {% if files %}
+
+            <div class="download_section d-flex js-content-center ai-center w-100 f-w">
+
+                {% for file in files %}
+
+                <div class="download_box w-3 pd-top">
+                    <div class="pdf_icon_output">
+                        <img src="{{ url_for('static', filename='image/icon.jpg') }}" alt="">
+                    </div>
+                    <div class="filename_class">
+                        <p>{{ file }}</p>
+
+                    </div>
+                    
+                    <div class="download_btn_class">
+                        <a href="{{ url_for('static', filename='sorted_pdf/' + file) }}" download>
+                            <button type="button" class="same_class_btn">
+                                Download
+
+                            </button>
+
+                        </a>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            {% endif %}
+        </div>
+    </div>
+</form>
+</div>
+{% endblock body %}
+
+
+{% block js %}
+<script src="{{url_for('static',filename='javascript/upload.js')}}"></script>
+{% endblock js %}

@@ -1,0 +1,10 @@
+.image_class{
+    border: 1px solid #D4AF37;
+    padding: 10px 15px;
+}
+#pdf_img{
+    display: none;
+}
+#loading_img{
+    display: none;
+}
